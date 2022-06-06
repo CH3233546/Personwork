@@ -1,77 +1,57 @@
-# cloud-clipboard
+# 手机电脑文件互传（类airdrop）
 
-> I need a url on my mobile. Don't want to type it. Don't want to message myself.
+- 我们主要基于python的`HttpServer`实现
+- 通过软件中嵌入Botton触发网页跳转实现
 
-Cloud Clipboard shares the data on clipboard across your devices. So it allows to copy on one device and paste on another.
 
-Currently supported platforms: Linux, Windows, Android
+# 手机电脑共享剪切板（PC复制mobile粘贴 or PC复制mobile粘贴）
 
-# Setup
+- 云剪切板可以跨设备共享数据，因此我们可以通过它来实现一个设备复制另一个设备粘贴
 
-- Download or clone this repo and change your directory to it. You only need `cloud.py` on desktop.
-- This scipt depends on `requests` and `pyperclip` python package, the later one also uses `xsel` system package. So install them by running
+- 环境：PC（windows)/mobile(Andriod)
+
+# 运行
+## PC端
+- 安装依赖库
 
 ```bash
 pip install requests pyperclip
-apt-get install xsel
 ```
 
-- Register yourself by running
+- clone库，终端打开项目所在路径，运行cloudcb.py
 
 ```bash
-python cloudcb.py register <username> <password>
+python cloudcb.py register <用户名> <密码>
 ```
+- 输入自己的用户名密码——将用于移动端登录
 
-- Replace `<username>` with your username and `<password>` with your password.
-- Install this [apk](https://github.com/krsoninikhil/cloud-clipboard/raw/master/mobile/bin/CloudClipboard-1.0-debug.apk) on your mobile.
+### 设置快捷方式
 
-# Adding keyboard shortcuts
+#### ctrl+Alt+C——上传剪切板内容至云剪切板上
 
-- Run the script with keyboard shortcuts analogous to `Ctrl + C` and `Ctrl + V`
-
-### For Linux
-
-- Add a keyboard shortcut `Alt + C` to run the below command
+- 桌面右键-新建-快捷方式
+- 添加路径
 
 ```bash
-gnome-terminal --command "python3 /home/nks/Projects/cloud-clipboard/cloudcb.py copy <username> <password>"
+C:\Windows\System32\cmd.exe /c python (项目路径)\cloudcb.py copy <用户名> <密码>
 ```
+- 下一步，完成
 
-- Add another keyboard shortcut `Alt + P` to run the below command
+#### ctrl+Alt+P——加载云剪切板内容至本地剪切板上
+
+- 桌面右键-新建-快捷方式
+- 添加路径
 
 ```bash
-gnome-terminal --command "python3 /home/nks/Projects/cloud-clipboard/cloudcb.py paste <username> <password>"
+C:\Windows\System32\cmd.exe /c python (项目路径)\cloudcb.py paste <用户名> <密码>
 ```
+- 下一步，完成
 
-### For Windows
+### 运行HTTPServer
 
-- Right click and select `New -> Shortcut`
-- Add the following line as path location and click OK
 
-```bash
-C:\Windows\System32\cmd.exe /c python C:\Users\nik\Downloads\cloudcb.py copy <username> <password>
-```
+## 移动端
+- 在ubuntu中生成apk后手机端下载使用即可
+- 移动端和PC端需要在同一局域网下
 
-- Replace the file path accordingly.
-- Right click on shortcut icon and go to `properties`.
-- Type the suitable keyboard shortcut and click Apply.
 
-# Instructions to use
-
-- Copy the text.
-- Execute this command to copy to cloud-clipboard if you are on desktop or just press `Alt + C` if you have added the shortcut
-
-```bash
-python cloudcb.py copy <username> <password>
-```
-
-- Open the app on your mobile to get that text on mobile's clipboard.
-- Execute this command to update your desktop's clipboard to the text copied on other devices or just press `Alt + P`
-
-```bash
-python cloudcb.py paste <username> <password>
-```
-
-# License
-
-[MIT License](https://nks.mit-license.org/)
