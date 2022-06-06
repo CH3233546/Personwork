@@ -6,7 +6,7 @@ import cloudPC as cl
 
 class Test(TestCase):
     def test_register(self):
-        self.assertTrue(cl.register('abcd323346','bbb'))
+        self.assertTrue(cl.register('abcd32334','bbb'))
 
     def test_upload(self):
         self.assertTrue(cl.upload('bbb','bbb'))
