@@ -18,10 +18,10 @@
 pip install requests pyperclip
 ```
 
-- clone库，终端打开项目所在路径，运行cloudcb.py
+- clone库，终端打开项目所在路径，运行cloudPC.py
 
 ```bash
-python cloudcb.py register <用户名> <密码>
+python cloudPC.py register <用户名> <密码>
 ```
 - 输入自己的用户名密码——将用于移动端登录
 
@@ -33,7 +33,7 @@ python cloudcb.py register <用户名> <密码>
 - 添加路径
 
 ```bash
-C:\Windows\System32\cmd.exe /c python (项目路径)\cloudcb.py copy <用户名> <密码>
+C:\Windows\System32\cmd.exe /c python (项目路径)\cloudPC.py copy <用户名> <密码>
 ```
 - 下一步，完成
 
@@ -43,7 +43,7 @@ C:\Windows\System32\cmd.exe /c python (项目路径)\cloudcb.py copy <用户名>
 - 添加路径
 
 ```bash
-C:\Windows\System32\cmd.exe /c python (项目路径)\cloudcb.py paste <用户名> <密码>
+C:\Windows\System32\cmd.exe /c python (项目路径)\cloudPC.py paste <用户名> <密码>
 ```
 - 下一步，完成
 
